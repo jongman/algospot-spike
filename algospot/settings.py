@@ -84,19 +84,21 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    # ones coming with Django
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    # external
     'south',
     'django_extensions',
     'debug_toolbar',
     'registration',
+    'attachments',
+    # algospot specific
     'judge'
 
 )
@@ -106,3 +108,11 @@ ACCOUNT_ACTIVATION_DAYS = 7
 
 # debug_toolbar settings
 INTERNAL_IPS = ("127.0.0.1")
+
+# attachments settings
+TEMPLATE_CONTEXT_PROCESSORS = (
+        'django.core.context_processors.auth',
+        'django.core.context_processors.i18n',
+        'django.core.context_processors.media',
+        'django.core.context_processors.request',
+        )
