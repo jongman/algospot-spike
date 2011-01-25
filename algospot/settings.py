@@ -1,6 +1,8 @@
 # Django settings for algospot project.
 import os.path
-from debug_toolbar_settings import *
+
+PROJECT_HOME = os.path.dirname(__file__)
+j = lambda path: os.path.join(PROJECT_HOME, path)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -8,17 +10,12 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
-PROJECT_HOME = os.path.split(__file__)[0]
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': PROJECT_HOME + "/algospot.sqlite3",                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': j("algospot.sqlite3"),
     }
 }
 
@@ -106,3 +103,6 @@ INSTALLED_APPS = (
 
 # django-registration settings
 ACCOUNT_ACTIVATION_DAYS = 7
+
+# debug_toolbar settings
+INTERNAL_IPS = ("127.0.0.1")
