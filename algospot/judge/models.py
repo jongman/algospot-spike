@@ -8,4 +8,5 @@ PROBLEM_STATES = {"DRAFT": 0,
 class Problem(models.Model):
     Name = models.CharField(max_length=128)
     Description = models.TextField()
-    State = models.IntegerField(default=0, choices=PROBLEM_STATES.iteritems())
+    State = models.IntegerField(default=PROBLEM_STATES["DRAFT"],
+            choices=PROBLEM_STATES.iteritems())
