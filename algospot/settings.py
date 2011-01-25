@@ -99,6 +99,10 @@ INSTALLED_APPS = (
     'south',
     'django_extensions',
     'debug_toolbar',
+    'registration',
     'judge'
 
 )
+
+# django-registration settings
+ACCOUNT_ACTIVATION_DAYS = 7
