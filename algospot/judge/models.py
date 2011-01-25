@@ -7,7 +7,7 @@ PROBLEM_STATES = {"DRAFT": 0,
         "PUBLISHED": 3}
 
 class Problem(models.Model):
-    key = models.CharField(max_length=64, null=False, unique=True, default="")
+    key = models.CharField(max_length=64, unique=True, default="")
     name = models.CharField(max_length=128, default="")
     state = models.IntegerField(default=PROBLEM_STATES["DRAFT"],
             choices=PROBLEM_STATES.iteritems())
@@ -24,4 +24,32 @@ class Problem(models.Model):
     memory_limit = models.IntegerField(default=65536)
     accepted = models.IntegerField(default=0)
     submissions = models.IntegerField(default=0)
+    updated = models.DateTimeField(null=True, auto_now=True, db_index=True)
+
+SUBMISSION_STATES = {"RECEIVED": 0,
+        "COMPILING": 1,
+        "RUNNING": 2,
+        "JUDGING": 3,
+        "COMPILE_ERROR": 4,
+        "OK": 5,
+        "ACCEPTED": 6,
+        "WRONG_ANSWER": 7,
+        "RUNTIME_ERROR": 8,
+        "TIME_LIMIT_EXCEEDED": 9,
+        "CANT_BE_JUDGED": 10,
+        "REJUDGE_REQUESTED": 11}
+
+class Submission(models.Model):
+    submitted = models.DateTimeField(null=True, auto_now_add=True)
+    problem = models.ForeignKey(Problem, null=True, db_index=True)
+    is_public = models.BooleanField(default=False)
+    author = models.ForeignKey(User, null=True, db_index=True)
+    language = models.CharField(max_length=64, default="")
+    state = models.IntegerField(default=SUBMISSION_STATES["RECEIVED"],
+            choices=SUBMISSION_STATES.iteritems())
+    length = models.IntegerField(default=0)
+    source = models.TextField(default="")
+    message = models.TextField(null=True)
+    time = models.IntegerField(null=True)
+    memory = models.IntegerField(null=True)
 
