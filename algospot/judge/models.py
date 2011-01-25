@@ -6,7 +6,7 @@ PROBLEM_STATES = {"DRAFT": 0,
         "PUBLISHED": 3}
 
 class Problem(models.Model):
-    Name = models.CharField(max_length=128)
-    Description = models.TextField()
-    State = models.IntegerField(default=PROBLEM_STATES["DRAFT"],
+    name = models.CharField(max_length=128, default="")
+    description = models.TextField(default="")
+    state = models.IntegerField(default=PROBLEM_STATES["DRAFT"],
             choices=PROBLEM_STATES.iteritems())
