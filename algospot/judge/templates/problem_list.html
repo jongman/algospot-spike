@@ -8,13 +8,11 @@
 
 {% block body %}
 
-<div class="ProblemCount">
-	<em>{{ page.paginator.count }}</em> 개의 문제가 공개되어 있습니다.
+{% load pagination %}
+<div class="pagination">
+	{% paginate page %}
 </div>
 
-{% load pagination %}
-
-{% paginate page %}
 <table class="problem_list">
 	<thead>
 		<th>AC?</th>
@@ -34,6 +32,8 @@
 	</tbody>
 </table>
 
-{% paginate page %}
+<div class="pagination">
+	{% paginate page %}
+</div>
 
 {% endblock %}
