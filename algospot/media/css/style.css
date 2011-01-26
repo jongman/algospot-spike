@@ -1,8 +1,8 @@
-/* 
-  HTML5 ✰ Boilerplate 
-  
+/*
+  HTML5 ✰ Boilerplate
+
   style.css contains a reset, font normalization and some base styles.
-  
+
   credit is left where credit is due.
   much inspiration was taken from these projects:
     yui.yahooapis.com/2.8.1/build/base/base.css
@@ -10,7 +10,7 @@
     praegnanz.de/weblog/htmlcssjs-kickstart
 */
 
-/* 
+/*
   html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
   v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
   html5doctor.com/html-5-reset-stylesheet/
@@ -25,7 +25,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
   margin:0;
@@ -35,10 +35,10 @@ time, mark, audio, video {
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
-}                  
+}
 
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section { 
+footer, header, hgroup, menu, nav, section {
     display:block;
 }
 
@@ -81,32 +81,33 @@ body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to prese
 
 select, input, textarea, button { font:99% sans-serif; }
 
-/* normalize monospace sizing 
+/* normalize monospace sizing
  * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
  */
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
- 
 
-/* 
- * minimal base styles 
+
+/*
+ * minimal base styles
  */
 
-
-body, select, input, textarea { 
-  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */ 
-  color: #444; 
-  /* set your base font here, to apply evenly */
-  /* font-family: Georgia, serif;  */   
+@font-face{ font-family:ngttf; src:url(../NanumGothic.ttf);}
+@font-face{ font-family:ngeot; src:url(../NanumGothic.eot);}
+body, select, input, textarea {
+  /* #444 looks better than black: twitter.com/H_FJ/statuses/11800719859 */
+  color: #444;
+  font-family: NanumGothic, 나눔고딕, ngttf, ngeot;
+  /* font-family: Georgia, serif;  */
 }
 
 /* Headers (h1,h2,etc) have no default font-size or margin,
-   you'll want to define those yourself. */ 
+   you'll want to define those yourself. */
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
-/* always force a scrollbar in non-IE */ 
+/* always force a scrollbar in non-IE */
 html { overflow-y: scroll; }
 
- 
+
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 
@@ -118,26 +119,26 @@ ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
 
 /* Remove margins for navigation lists */
-nav ul, nav li { margin: 0; } 
+nav ul, nav li { margin: 0; }
 
 small { font-size: 85%; }
 strong, th { font-weight: bold; }
 
-td, td img { vertical-align: top; } 
+td, td img { vertical-align: top; }
 
 sub { vertical-align: sub; font-size: smaller; }
 sup { vertical-align: super; font-size: smaller; }
 
-pre { 
-  padding: 15px; 
-  
+pre {
+  padding: 15px;
+
   /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
   white-space: pre; /* CSS2 */
   white-space: pre-wrap; /* CSS 2.1 */
   white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
   word-wrap: break-word; /* IE */
 }
- 
+
 textarea { overflow: auto; } /* thnx ivannikolic! www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
 
 .ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
@@ -151,43 +152,43 @@ input[type="checkbox"] { vertical-align: bottom; }
 
 /* hand cursor on clickable input elements */
 label, input[type=button], input[type=submit], button { cursor: pointer; }
- 
-/* webkit browsers add a 2px margin outside the chrome of form elements */  
+
+/* webkit browsers add a 2px margin outside the chrome of form elements */
 button, input, select, textarea { margin: 0; }
 
 /* colors for form validity */
 input:valid, textarea:valid   {  }
-input:invalid, textarea:invalid { 
+input:invalid, textarea:invalid {
       border-radius: 1px;
-    -moz-box-shadow: 0px 0px 5px red; 
- -webkit-box-shadow: 0px 0px 5px red; 
+    -moz-box-shadow: 0px 0px 5px red;
+ -webkit-box-shadow: 0px 0px 5px red;
          box-shadow: 0px 0px 5px red;
 }
-.no-boxshadow input:invalid, 
+.no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
 
 /* These selection declarations have to be separate.
-   No text-shadow: twitter.com/miketaylr/status/12228805301 
+   No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink. */
 ::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; } 
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
 
 /*  j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; } 
+a:link { -webkit-tap-highlight-color: #FF5E99; }
 
-/* make buttons play nice in IE:    
+/* make buttons play nice in IE:
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
 button {  width: auto; overflow: visible; }
- 
-/* bicubic resizing for non-native sized IMG: 
+
+/* bicubic resizing for non-native sized IMG:
    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
 .ie7 img { -ms-interpolation-mode: bicubic; }
 
 
 
-/* 
- * Non-semantic helper classes 
+/*
+ * Non-semantic helper classes
  */
 
 /* for image replacement */
@@ -195,11 +196,11 @@ button {  width: auto; overflow: visible; }
 
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-.hidden { display: none; visibility: hidden; } 
+.hidden { display: none; visibility: hidden; }
 
-/* Hide only visually, but have it available for screenreaders 
+/* Hide only visually, but have it available for screenreaders
    www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden  */
-.visuallyhidden { position: absolute !important;    
+.visuallyhidden { position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px); }
 
@@ -208,8 +209,8 @@ button {  width: auto; overflow: visible; }
 
 /* >> The Magnificent CLEARFIX: Updated to prevent margin-collapsing on child elements << j.mp/bestclearfix */
 .clearfix:before, .clearfix:after {
-  content: "\0020"; display: block; height: 0; visibility: hidden;	
-} 
+  content: "\0020"; display: block; height: 0; visibility: hidden;
+}
 
 .clearfix:after { clear: both; }
 /* Fix clearfix: blueprintcss.lighthouseapp.com/projects/15318/tickets/5-extra-margin-padding-bottom-of-page */
@@ -220,61 +221,197 @@ button {  width: auto; overflow: visible; }
 
 
 
- /* Primary Styles
-    Author: 
- */
+/* ************************************************
+ * Primary Styles: algospot editors, only edit here
+ **************************************************/
 
+/* Generic Styles *********************************/
 
+/* Headings */
+h1 {font-size: 3.571em}
+h2 {font-size: 1.571em} /* 22px */
+h3 {font-size: 1.429em} /* 20px */
+h4 {font-size: 1.286em} /* 18px */
+h5 {font-size: 1.143em} /* 16px */
+h6 {font-size: 1em} /* 14px */
 
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+}
 
+/* Page Layout ************************************/
 
+body {
+	background: #f0f0f0;
+}
 
+.body {
+	margin: 0 auto;
+	width: 940px;
+}
 
+/* Header *****************************************/
 
+header {
+	padding: 2.5em 0 0 0;
+	display: table;
+}
+header h1 {
+	display: table-cell;
+	width: 640px;
+	padding: 0 0 .5em .2em;
+	font-size: 3.571em; line-height: .6;
+    text-shadow: 1px 1px 1px #999;
+}
+header h1 em {
+	color: #F71B52;
+	font-style: normal;
+}
+header h1 strong {
+	text-shadow: none;
+	font-family: Trebuchet MS;
+	font-size: 0.30em;
+	font-weight: normal;
+}
+header .memberinfo {
+	display: table-cell;
+	text-align: right;
+}
+header .memberinfo a.button {
+	margin: 4px;
+	padding: 4px;
+	border: 1px solid silver;
+	display: inline-block;
+	text-decoration: none;
+	background-color: #e0e0e0;
+}
 
+/* Navigation bar *********************************/
+nav {
+	left: 0;
+	width: 100%;
+}
+nav.main {
+	height: 40px;
+	line-height: 30px;
+	background-color: #4E5259;
+}
+nav.sub {
+	height: 30px;
+	line-height: 30px;
+	background-color: #eaeaea;
+}
+nav ul li {
+	float: left;
+	display: inline;
+	margin: 0;
+}
+nav ul li a, nav ul li a:visited {
+	padding: 5px 1.5em;
+	text-decoration: none;
+}
+nav.main ul li a, nav.main ul li a:visited {
+    text-shadow: 1px 1px 1px #333;
+    font-size: 1.143em; /* 16px */
+	color: #eee;
+	height: 30px;
+	display: inline-block;
+}
+nav.main ul li.active a,
+nav.main ul li.active a:visited,
+nav.main ul li a:hover,
+nav.main ul li a:active {
+	text-shadow: none;
+	background: #c74451;
+	color: #fff;
+}
+nav.sub ul li a,
+nav.sub ul li a:visited {
+	color: #557;
+}
+nav.sub ul li a:hover {
+	color: #c74451;
+}
+nav.sub ul li.active a,
+nav.sub ul li.active a:visited {
+	text-decoration: underline;
+}
 
+/*
+div.sub ul li {
+	float: left;
+	margin: 0;
+}
+div.sub ul li a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 5px 1.5em;
+}*/
 
+/* Body *****************************************/
+div#main {
+	margin-top: 33px;
+}
+.pagetitle {
+	width: 100%;
+	font-weight: bold;
+}
 
-
+/* Footer *****************************************/
+footer {
+	margin-top: 24px;
+	left: 0;
+	width: 100%;
+	background-color: #eaeaea;
+	border-top: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+}
+footer div {
+	height: 40px;
+	line-height: 30px;
+	text-align: center;
+}
 
 
 /*
  * Media queries for responsive design
- * These follow after primary styles so they will successfully override. 
+ * These follow after primary styles so they will successfully override.
  */
 
-@media all and (orientation:portrait) { 
+@media all and (orientation:portrait) {
   /* Style adjustments for portrait mode goes here */
-  
+
 }
 
-@media all and (orientation:landscape) { 
+@media all and (orientation:landscape) {
   /* Style adjustments for landscape mode goes here */
-  
+
 }
 
-/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
+/* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)
    Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
-  
-  
+
+
   /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
-     j.mp/textsizeadjust 
+     j.mp/textsizeadjust
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
 }
 
-/* 
+/*
  * print styles
- * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
+ * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/
  */
 @media print {
   * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
   a, a:visited { color: #444 !important; text-decoration: underline; }
-  a:after { content: " (" attr(href) ")"; } 
+  a:after { content: " (" attr(href) ")"; }
   abbr:after { content: " (" attr(title) ")"; }
   .ir a:after { content: ""; }  /* Don't show links for images */
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */ 
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
   tr, img { page-break-inside: avoid; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }

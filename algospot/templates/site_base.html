@@ -39,16 +39,41 @@
 <body>
 
   <div id="container">
-    <header>
-
+    <header class="body">
+		<h1>
+			alg<em>o</em>spot.com <br/>
+			<strong>The place for fighting programmers since 2007</strong>
+		</h1>
+		<aside class="memberinfo">
+			안녕하세요 <a href="#">JongMan</a> 님.
+			<br/>
+			<a href="#" class="button">내 정보</a>
+			<a href="#" class="button">로그아웃</a>
+		</aside>
     </header>
+	<nav class="main">
+		<ul class="body">
+			<li class="{% block home_active %}{% endblock %}"><a href="#">처음으로</a></li>
+			<li class="{% block members_active %}{% endblock %}"><a href="#">회원들</a></li>
+			<li class="{% block forum_active %}{% endblock %}"><a href="#">게시판</a></li>
+			<li class="{% block wiki_active %}{% endblock %}"><a href="#">위키</a></li>
+			<li class="{% block judge_active %}{% endblock %}"><a href="#">온라인 저지</a></li>
+			<li class="{% block tgpd_active %}{% endblock %}"><a href="#">문제 모음</a></li>
+			<li class="{% block calendar_active %}{% endblock %}"><a href="#">캘린더</a></li>
+		</ul>
+	</nav>
+		{% block submenu %}
+		{% endblock %}
 
-    <div id="main">
+    <div id="main" class="body">
+		<h2 class="pagetitle">{% block pagetitle %}{% endblock %}</h2>
 		{% block body %} {% endblock %}
     </div>
 
-    <footer>
-
+	<footer>
+		<div class="body">
+			<a href="http://algospot.com/">algospot.com</a> since 2007. <a href="#">Contact administrator</a>.
+		</div>
     </footer>
   </div> <!--! end of #container -->
 
