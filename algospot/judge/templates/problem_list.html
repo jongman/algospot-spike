@@ -29,11 +29,11 @@
 		{% for problem in page.object_list %}
 		<tr>
 			<td class="ac"></td>
-			<td class="id">{{ problem.key }}</td>
-			<td class="name">{{ problem.name }}</td>
+			<td class="id"><a href="#">{{ problem.key }}</a></td>
+			<td class="name"><a href="#">{{ problem.name }}</a></td>
 			<td class="submissions">{{ problem.submissions }}</td>
-			<td class="accepted">{% ac_ratio problem %}</td>
-			<td class="source">{{ problem.source }}</td>
+			<td class="accepted"><a href="#">{% ac_ratio problem %}</a></td>
+			<td class="source"><a href="#">{{ problem.source }}</a></td>
 		</tr>
 		{% endfor %}
 	</tbody>

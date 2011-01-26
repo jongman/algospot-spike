@@ -25,9 +25,15 @@ table.problem_list th.accepted {
 table.problem_list th.source {
 	width: 250px;
 }
-
 table.problem_list th, table.problem_list td {
 	padding: 8px;
+}
+table.problem_list a, table.problem_list a:visited {
+	text-decoration: none;
+	color: #038;
+}
+table.problem_list a:hover {
+	color: #607890;
 }
 
 table.problem_list th {
@@ -51,4 +57,11 @@ table.problem_list td {
 		rgb(255,255,255) 0%,
 		rgb(240,240,240) 94%
 	);
+}
+
+table.problem_list tr:hover td {
+	background: #8790A8;
+}
+table.problem_list tr:hover td, table.problem_list tr:hover td a {
+	color: white;
 }
