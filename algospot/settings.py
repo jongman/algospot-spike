@@ -101,6 +101,7 @@ INSTALLED_APPS = (
     'attachments',
     'staticfiles',
     # algospot specific
+    'common',
     'judge'
 
 )
