@@ -1,0 +1,35 @@
+{% spaceless %}
+<span class="paginate-previous">
+	{% if has_previous %}
+		<a href="?page={{ previous }}" title="이전 페이지">
+	{% else %}
+		<del>
+	{% endif %}
+	&laquo; 이전
+	{% if has_previous %}
+		</a>
+	{% else %}
+		</del>
+	{% endif %}
+</span>
+<select class="paginate-pages">
+{% for num in page.paginator.page_range %}
+	<option value="{{num}}" {% if num == page.number %}selected{% endif %}>
+		{{num}}/{{page.paginator.num_pages}}
+	</option>
+{% endfor %}
+</select>
+<span class="paginate-next">
+	{% if has_next %}
+		<a href="?page={{ next }}" title="다음 페이지">
+	{% else %}
+		<del>
+	{% endif %}
+	다음 &raquo;
+	{% if has_next %}
+		</a>
+	{% else %}
+		</del>
+	{% endif %}
+</span>
+{% endspaceless %}

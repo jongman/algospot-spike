@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block judge_problems_list_active %}active{% endblock %}
+
+{% block pagetitle %}
+문제 목록 보기
+{% endblock %}
+
+{% block body %}
+
+<div class="ProblemCount">
+	<em>{{ page.paginator.count }}</em> 개의 문제가 공개되어 있습니다.
+</div>
+
+{% load pagination %}
+
+{% paginate page %}
+<table class="problem_list">
+	<thead>
+		<th>AC?</th>
+		<th>ID</th>
+		<th>이름</th>
+		<th>정답/제출횟수</th>
+	</thead>
+	<tbody>
+		{% for problem in page.object_list %}
+		<tr>
+			<td></td>
+			<td>{{ problem.key }}</td>
+			<td>{{ problem.name }}</td>
+			<td>{{ problem.accepted }} / {{ problem.submissions }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+{% paginate page %}
+
+{% endblock %}
