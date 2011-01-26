@@ -81,6 +81,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_ROOT, 'templates')
 )
 
 INSTALLED_APPS = (
@@ -122,4 +123,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 STATIC_URL = "/site_media/static/"
 STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
 STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, "media")]
+TEMPLATE_CONTEXT_PROCESSORS += ('staticfiles.context_processors.static_url',)
 
