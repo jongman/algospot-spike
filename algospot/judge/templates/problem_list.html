@@ -13,20 +13,27 @@
 	{% paginate page %}
 </div>
 
+{% load judge %}
 <table class="problem_list">
 	<thead>
-		<th>AC?</th>
-		<th>ID</th>
-		<th>이름</th>
-		<th>정답/제출횟수</th>
+		<tr>
+			<th class="ac">AC?</th>
+			<th class="class">ID</th>
+			<th class="name">이름</th>
+			<th class="submissions">제출횟수</th>
+			<th class="accepted">정답비율</th>
+			<th class="source">출처</th>
+		</tr>
 	</thead>
 	<tbody>
 		{% for problem in page.object_list %}
 		<tr>
-			<td></td>
-			<td>{{ problem.key }}</td>
-			<td>{{ problem.name }}</td>
-			<td>{{ problem.accepted }} / {{ problem.submissions }}</td>
+			<td class="ac"></td>
+			<td class="id">{{ problem.key }}</td>
+			<td class="name">{{ problem.name }}</td>
+			<td class="submissions">{{ problem.submissions }}</td>
+			<td class="accepted">{% ac_ratio problem %}</td>
+			<td class="source">{{ problem.source }}</td>
 		</tr>
 		{% endfor %}
 	</tbody>

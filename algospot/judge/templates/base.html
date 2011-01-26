@@ -1,6 +1,9 @@
 {% extends "site_base.html" %}
 
 {% block judge_active %}active{% endblock %}
+{% block head_extra %}
+	<link rel="stylesheet" href="{{ STATIC_URL }}judge.css">
+{% endblock %}
 
 {% block submenu %}
 	<nav class="sub">
