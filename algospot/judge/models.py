@@ -26,6 +26,9 @@ class Problem(models.Model):
     submissions = models.IntegerField(default=0)
     updated = models.DateTimeField(null=True, auto_now=True, db_index=True)
 
+    def __unicode__(self):
+        return "%s (%s)" % (self.key, self.name)
+
 SUBMISSION_STATES = {"RECEIVED": 0,
         "COMPILING": 1,
         "RUNNING": 2,
