@@ -1,8 +1,8 @@
 # Django settings for algospot project.
 import os.path
 
-PROJECT_HOME = os.path.dirname(__file__)
-j = lambda path: os.path.join(PROJECT_HOME, path)
+PROJECT_ROOT = os.path.dirname(__file__)
+j = lambda path: os.path.join(PROJECT_ROOT, path)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -44,12 +44,12 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "site_media", "media")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = "/site_media/media/"
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -98,6 +98,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'registration',
     'attachments',
+    'staticfiles',
     # algospot specific
     'judge'
 
@@ -116,3 +117,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
         'django.core.context_processors.media',
         'django.core.context_processors.request',
         )
+
+# staticfiles settings
+STATIC_URL = "/site_media/static/"
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "site_media", "static")
+STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, "media")]
+
