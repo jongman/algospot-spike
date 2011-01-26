@@ -5,10 +5,11 @@
 {% block submenu %}
 	<nav class="sub">
         <ul class="body">
-            <li class="{% block judge_home_active %}{% endblock %}"><a href="#">저지 처음으로</a></li>
             <li class="{% block judge_problems_active %}{% endblock %}"><a href="#">문제 찾기</a></li>
+            <li class="{% block judge_submissions_active %}{% endblock %}"><a href="#">최근 제출</a></li>
             <li class="{% block judge_contest_active %}{% endblock %}"><a href="#">대회</a></li>
             <li class="{% block judge_stats_active %}{% endblock %}"><a href="#">통계 및 랭킹</a></li>
+            <li><a href="#">도움말</a></li>
         </ul>
 	</nav>
 {% endblock %}
